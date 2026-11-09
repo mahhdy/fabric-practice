@@ -1,0 +1,3792 @@
+<!DOCTYPE html>
+<html lang="fa" dir="auto" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آزمون تستی ۵۰ سوالی | Fabric Prep</title>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-card: #ffffff;
+    --text: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --accent-light: #eff6ff;
+    --accent-ring: rgba(37, 99, 235, 0.2);
+    --border: #e2e8f0;
+    --border-strong: #cbd5e1;
+    --code-bg: #f1f5f9;
+    --code-text: #dc2626;
+    --pre-bg: #0f172a;
+    --pre-text: #f1f5f9;
+    --blockquote-bg: #f0fdf4;
+    --blockquote-border: #16a34a;
+    --blockquote-text: #166534;
+    --table-header-bg: #f1f5f9;
+    --table-alt-bg: #f8fafc;
+    --success: #16a34a;
+    --success-light: #dcfce7;
+    --warning: #d97706;
+    --warning-light: #fef3c7;
+    --error: #dc2626;
+    --error-light: #fee2e2;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+}
+
+[data-theme="dark"] {
+    --bg: #0b1120;
+    --surface: #1e293b;
+    --surface-card: #1e293b;
+    --text: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent: #3b82f6;
+    --accent-hover: #60a5fa;
+    --accent-light: #1e3a8a;
+    --accent-ring: rgba(59, 130, 246, 0.3);
+    --border: #334155;
+    --border-strong: #475569;
+    --code-bg: #334155;
+    --code-text: #f87171;
+    --pre-bg: #030712;
+    --pre-text: #e2e8f0;
+    --blockquote-bg: #14532d20;
+    --blockquote-border: #22c55e;
+    --blockquote-text: #86efac;
+    --table-header-bg: #1e293b;
+    --table-alt-bg: #162032;
+    --success: #22c55e;
+    --success-light: #14532d40;
+    --warning: #f59e0b;
+    --warning-light: #78350f40;
+    --error: #ef4444;
+    --error-light: #7f1d1d40;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
+    --shadow: 0 4px 6px -1px rgba(0,0,0,0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.5);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    direction: rtl;
+    text-align: right;
+    line-height: 1.85;
+    margin: 0;
+    padding: 0;
+    transition: background 0.25s, color 0.25s;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 4rem;
+}
+
+.content-card {
+    background: var(--surface);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    padding: 2.5rem 3rem;
+    margin-top: 1rem;
+    position: relative;
+}
+
+/* ─── Top Bar & Navigation ─────────────────────────────────────────── */
+
+.top-nav {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    color: white;
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+
+.brand {
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+    text-decoration: none;
+}
+
+.brand span.badge-logo {
+    background: #3b82f6;
+    color: white;
+    font-size: 0.72rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    font-size: 0.86rem;
+    font-weight: 500;
+    padding: 0.32rem 0.7rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.15s;
+}
+
+.nav-links a:hover {
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+
+.nav-links a.active {
+    background: #3b82f6;
+    color: white;
+    font-weight: 600;
+}
+
+.btn-icon {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    border-radius: 8px;
+    padding: 0.4rem 0.7rem;
+    cursor: pointer;
+    font-size: 0.88rem;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: background 0.15s;
+}
+
+.btn-icon:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* ─── Search Bar ───────────────────────────────────────────────────── */
+
+.search-container {
+    margin: 1.5rem 0 2rem;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.85rem 1.2rem;
+    padding-left: 2.8rem;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-ring);
+}
+
+/* ─── Headings ─────────────────────────────────────────────────────── */
+
+h1 {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--text);
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 0.6rem;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text);
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.45rem;
+    margin: 2.2rem 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+h3 {
+    font-size: 1.18rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.6rem 0 0.8rem 0;
+}
+
+/* ─── Concept Cards (Cheatsheet) ───────────────────────────────────── */
+
+.concept-card {
+    background: var(--surface-card);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.2rem 1.6rem;
+    margin-bottom: 1.2rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s;
+}
+
+.concept-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow);
+}
+
+.concept-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.concept-badge {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 8px;
+    direction: ltr;
+    display: inline-block;
+    box-shadow: var(--shadow-sm);
+}
+
+.concept-body {
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.85;
+}
+
+.concept-body ul {
+    margin: 0.3rem 0;
+    padding-right: 1.4rem;
+}
+
+.concept-body li {
+    margin-bottom: 0.4rem;
+}
+
+/* ─── Lists & Blockquotes ──────────────────────────────────────────── */
+
+p {
+    margin: 0.7rem 0 1rem 0;
+}
+
+ul, ol {
+    padding-right: 1.8rem;
+    padding-left: 0;
+    margin: 0.6rem 0 1.2rem 0;
+}
+
+ol[dir="ltr"], ul[dir="ltr"] {
+    direction: ltr;
+    text-align: left;
+    padding-left: 1.8rem;
+    padding-right: 0;
+}
+
+li {
+    margin-bottom: 0.45rem;
+    line-height: 1.9;
+}
+
+blockquote {
+    background: var(--blockquote-bg);
+    border-right: 4px solid var(--blockquote-border);
+    border-left: none;
+    margin: 1.2rem 0;
+    padding: 0.9rem 1.2rem;
+    border-radius: 0 10px 10px 0;
+    color: var(--blockquote-text);
+    font-weight: 500;
+}
+
+blockquote[dir="ltr"] {
+    border-left: 4px solid var(--blockquote-border);
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    direction: ltr;
+    text-align: left;
+}
+
+/* ─── Inline Code & Code Blocks ────────────────────────────────────── */
+
+code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.88em;
+    background: var(--code-bg);
+    color: var(--code-text);
+    padding: 0.2em 0.5em;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    direction: ltr;
+    unicode-bidi: isolate;
+    white-space: nowrap;
+}
+
+pre {
+    direction: ltr;
+    text-align: left;
+    background: var(--pre-bg);
+    color: var(--pre-text);
+    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    overflow-x: auto;
+    margin: 1.2rem 0;
+    box-shadow: var(--shadow-sm);
+    line-height: 1.6;
+    position: relative;
+}
+
+pre code {
+    background: none;
+    border: none;
+    color: inherit;
+    padding: 0;
+    font-size: 0.88rem;
+    white-space: pre;
+    direction: ltr;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #e2e8f0;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+}
+
+.copy-btn:hover {
+    background: rgba(255,255,255,0.25);
+    color: white;
+}
+
+/* ─── Tables ───────────────────────────────────────────────────────── */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.2rem 0 1.8rem 0;
+    font-size: 0.95rem;
+    box-shadow: var(--shadow-sm);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+thead {
+    background: var(--table-header-bg);
+}
+
+th {
+    font-weight: 700;
+    text-align: right;
+    padding: 0.85rem 1.1rem;
+    border-bottom: 2px solid var(--border-strong);
+    color: var(--text);
+    white-space: nowrap;
+}
+
+td {
+    padding: 0.75rem 1.1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+}
+
+tbody tr:nth-child(even) {
+    background: var(--table-alt-bg);
+}
+
+tbody tr:hover {
+    background: var(--accent-light);
+    transition: background 0.15s;
+}
+
+/* ─── Action Buttons ───────────────────────────────────────────────── */
+
+.btn-action {
+    background: var(--surface);
+    border: 1.5px solid var(--border-strong);
+    color: var(--text);
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    text-decoration: none;
+}
+
+.btn-action:hover {
+    background: var(--accent-light);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    color: white;
+}
+
+/* ─── MCQ Interactive Cards ────────────────────────────────────────── */
+
+.mcq-stats {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 1.1rem 1.6rem;
+    margin-bottom: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 3.8rem;
+    z-index: 90;
+    backdrop-filter: blur(10px);
+}
+
+.mcq-stats-score {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.mcq-stats-score span.score-value {
+    color: var(--accent);
+    font-size: 1.25rem;
+}
+
+.mcq-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-action {
+    background: var(--surface);
+    border: 1.5px solid var(--border-strong);
+    color: var(--text);
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.btn-action:hover {
+    background: var(--accent-light);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    color: white;
+}
+
+.mcq-card {
+    background: var(--surface-card);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem 1.8rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    direction: ltr;
+    text-align: left;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    scroll-margin-top: 8rem;
+}
+
+.mcq-card:hover {
+    border-color: var(--border-strong);
+}
+
+.mcq-card.is-flagged {
+    border-color: var(--warning);
+    background: linear-gradient(to right, var(--warning-light) 0%, var(--surface-card) 6%);
+}
+
+.mcq-card.is-answered {
+    border-color: var(--accent);
+}
+
+.mcq-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.mcq-number {
+    background: var(--accent-light);
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 0.88rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 8px;
+    white-space: nowrap;
+    border: 1px solid var(--accent);
+}
+
+.mcq-question {
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.6;
+    flex: 1;
+}
+
+.mcq-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.7rem;
+    margin-top: 0.9rem;
+}
+
+.mcq-opt {
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    color: var(--text);
+    transition: all 0.15s;
+    user-select: none;
+}
+
+.mcq-opt:hover {
+    background: var(--accent-light);
+    border-color: var(--accent);
+}
+
+.mcq-opt.selected {
+    border-color: var(--accent);
+    background: var(--accent-light);
+    font-weight: 600;
+    box-shadow: 0 0 0 1px var(--accent);
+}
+
+.mcq-opt.correct {
+    background: var(--success-light) !important;
+    border-color: var(--success) !important;
+    color: var(--text) !important;
+    font-weight: 700;
+    box-shadow: 0 0 0 1px var(--success);
+}
+
+.mcq-opt.incorrect {
+    background: var(--error-light) !important;
+    border-color: var(--error) !important;
+    color: var(--text) !important;
+    box-shadow: 0 0 0 1px var(--error);
+}
+
+.mcq-opt-letter {
+    font-weight: 800;
+    color: var(--text-muted);
+    min-width: 1.4rem;
+}
+
+.mcq-opt.selected .mcq-opt-letter {
+    color: var(--accent);
+}
+
+.mcq-opt.correct .mcq-opt-letter {
+    color: var(--success);
+}
+
+.mcq-opt.incorrect .mcq-opt-letter {
+    color: var(--error);
+}
+
+.mcq-footer {
+    margin-top: 1.1rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.mcq-toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.btn-tool {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.btn-tool:hover {
+    background: var(--bg);
+    border-color: var(--border-strong);
+    color: var(--text);
+}
+
+.btn-tool.flagged {
+    background: var(--warning-light);
+    border-color: var(--warning);
+    color: var(--warning);
+    font-weight: 700;
+}
+
+.mcq-toggle-answer {
+    background: none;
+    border: none;
+    color: var(--accent);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.mcq-toggle-answer:hover {
+    text-decoration: underline;
+}
+
+.mcq-explanation {
+    display: none;
+    margin-top: 0.6rem;
+    padding: 0.85rem 1.1rem;
+    background: var(--blockquote-bg);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.6;
+    width: 100%;
+}
+
+/* ─── End-of-Page Answer Sheet Table ────────────────────────────────── */
+
+.answer-sheet-container {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 3px solid var(--accent);
+}
+
+.answer-sheet-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.answer-sheet-header h2 {
+    margin: 0;
+    border: none;
+    padding: 0;
+    font-size: 1.5rem;
+}
+
+/* Bubble Matrix Grid */
+.matrix-card {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.matrix-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 0.45rem;
+    direction: ltr;
+}
+
+.matrix-cell {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.4rem 0.2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+}
+
+.matrix-cell:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+    border-color: var(--accent);
+}
+
+.matrix-cell .cell-q {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+.matrix-cell .cell-val {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-muted);
+}
+
+.matrix-cell.answered {
+    background: var(--accent-light);
+    border-color: var(--accent);
+}
+.matrix-cell.answered .cell-val {
+    color: var(--accent);
+}
+
+.matrix-cell.flagged {
+    background: var(--warning-light) !important;
+    border-color: var(--warning) !important;
+}
+.matrix-cell.flagged .cell-val {
+    color: var(--warning) !important;
+}
+
+.matrix-cell.correct {
+    background: var(--success-light) !important;
+    border-color: var(--success) !important;
+}
+.matrix-cell.correct .cell-val {
+    color: var(--success) !important;
+}
+
+.matrix-cell.incorrect {
+    background: var(--error-light) !important;
+    border-color: var(--error) !important;
+}
+.matrix-cell.incorrect .cell-val {
+    color: var(--error) !important;
+}
+
+/* Detailed Multi-Column Table */
+.answer-table-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+    direction: ltr;
+}
+
+.sub-table-card {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.sub-table-header {
+    background: var(--table-header-bg);
+    padding: 0.5rem 0.8rem;
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+.sub-table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    box-shadow: none;
+    border: none;
+}
+
+.sub-table th, .sub-table td {
+    padding: 0.45rem 0.6rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.sub-table th {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    background: var(--bg);
+}
+
+.sub-table tbody tr:hover {
+    background: var(--accent-light);
+}
+
+.cell-choice {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+}
+
+.cell-choice.active {
+    color: var(--accent);
+}
+
+.cell-choice.flagged {
+    color: var(--warning);
+}
+
+.cell-choice.correct {
+    color: var(--success);
+}
+
+.cell-choice.incorrect {
+    color: var(--error);
+}
+
+.link-jump {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.78rem;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    transition: all 0.1s;
+}
+
+.link-jump:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* Output String Card */
+.export-card {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.2rem 1.4rem;
+    margin-top: 1.5rem;
+}
+
+.export-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.export-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.export-textarea {
+    width: 100%;
+    height: 70px;
+    padding: 0.7rem 0.9rem;
+    border-radius: 8px;
+    border: 1.5px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    resize: none;
+    direction: ltr;
+    text-align: left;
+    outline: none;
+}
+
+.export-textarea:focus {
+    border-color: var(--accent);
+}
+
+
+/* ─── Theory Q&A Interactive Cards ─────────────────────────────────── */
+
+.theory-card {
+    background: var(--surface-card);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 1.6rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+    scroll-margin-top: 8rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.theory-card:hover {
+    border-color: var(--border-strong);
+}
+
+.theory-card.is-answered {
+    border-color: var(--accent);
+}
+
+.theory-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.theory-num {
+    background: var(--accent-light);
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 8px;
+    white-space: nowrap;
+    border: 1px solid var(--accent);
+}
+
+.theory-question {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.6;
+    flex: 1;
+    direction: ltr;
+    text-align: left;
+}
+
+.theory-guide {
+    background: var(--bg);
+    border-right: 3px solid var(--accent);
+    padding: 0.6rem 0.9rem;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.theory-textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 0.85rem 1.1rem;
+    border-radius: 10px;
+    border: 1.5px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.theory-textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-ring);
+}
+
+.theory-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.8rem;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.theory-status {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.theory-model-answer {
+    display: none;
+    margin-top: 1.2rem;
+    padding: 1.2rem 1.5rem;
+    background: var(--blockquote-bg);
+    border-radius: 10px;
+    border-right: 4px solid var(--success);
+    font-size: 0.92rem;
+    line-height: 1.85;
+}
+
+.theory-model-answer h4 {
+    margin: 0.8rem 0 0.3rem 0;
+    color: var(--success);
+    font-size: 1rem;
+}
+
+/* ─── Practical Labs Workbook Cards ────────────────────────────────── */
+
+.lab-card {
+    background: var(--surface-card);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 1.6rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+    scroll-margin-top: 8rem;
+}
+
+.lab-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.8rem;
+}
+
+.lab-num {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    color: white;
+    font-weight: 800;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.lab-title {
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.lab-checklist {
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+    margin-top: 1rem;
+}
+
+.lab-checklist-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.lab-check-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* ─── End-of-Page Summary Tables ───────────────────────────────────── */
+
+.summary-section {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 3px solid var(--accent);
+}
+
+.summary-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.summary-header h2 {
+    margin: 0;
+    border: none;
+    padding: 0;
+    font-size: 1.45rem;
+}
+
+/* ─── Back to top button ───────────────────────────────────────────── */
+
+#back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    background: var(--accent);
+    color: white;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-lg);
+    z-index: 99;
+    transition: transform 0.2s, background 0.2s;
+}
+
+#back-to-top:hover {
+    background: var(--accent-hover);
+    transform: scale(1.08);
+}
+
+/* ─── Index Grid ───────────────────────────────────────────────────── */
+
+.file-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 1.3rem;
+    margin-top: 1.8rem;
+}
+
+.file-card {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.6rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.file-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+    border-color: var(--accent);
+}
+
+.file-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--accent);
+    font-size: 1.15rem;
+    border: none;
+}
+
+.file-card p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    flex: 1;
+}
+
+.file-card .badge {
+    align-self: flex-start;
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+    margin-top: 1rem;
+}
+
+@media print {
+    body { background: white !important; color: black !important; }
+    .container { max-width: 100%; padding: 0; }
+    .content-card { box-shadow: none; border: none; padding: 0; }
+    .top-nav, #back-to-top, .search-container, .btn-action { display: none !important; }
+    pre { background: #f1f5f9 !important; color: #000 !important; }
+}
+
+@media (max-width: 768px) {
+    .container { padding: 0.8rem; }
+    .content-card { padding: 1.4rem; border-radius: 12px; }
+    .top-nav { padding: 0.6rem 1rem; }
+}
+
+    </style>
+</head>
+<body>
+<div class="top-nav">
+  <a href="index.html" class="brand">📘 Fabric Prep <span class="badge-logo">DP-600 / DP-700</span></a>
+  <div class="nav-links">
+    <a href="index.html">📂 فهرست</a>
+    <a href="00-Cheatsheet.html">📋 برگه تقلب</a>
+    <a href="01-Theory-Questions.html">📝 سوالات نظری</a>
+    <a href="01-Theory-Answers.html">💡 پاسخ‌نامه تشریحی</a>
+    <a href="02-MCQ-50.html" class="active">⚡ آزمون تستی</a>
+    <a href="03-Practical-Labs.html">🔬 تمرین‌های عملی</a>
+    <a href="04-Resources.html">📚 منابع</a>
+    <a href="_AnswerKey_DontOpen.html">🔑 کلید تست</a>
+  </div>
+  <button class="btn-icon" id="theme-toggle-btn" onclick="toggleTheme()" title="تغییر تم">🌙 تم تاریک</button>
+</div>
+
+<div class="container">
+    <div class="content-card">
+<h1>50 سوال تستی (سطح DP-600 / DP-700)</h1>
+<p><strong>روش:</strong> فقط شماره و گزینه رو بفرست، مثلاً <code>1:A, 2:C, ...</code>. اگر در گزینه‌ای مطمئن نیستی کنارش <code>?</code> بذار تا روی همون‌ها بیشتر توضیح بدم.
+جواب‌ها داخل فایل <code>_AnswerKey_DontOpen.md</code> است. تا جواب ندادی بازش نکن.</p>
+<p>| Q   | A   |                             |
+| --- | --- | --------------------------- |
+| 1   | B   |                             |
+| 2   | C   |                             |
+| 3   | B   |                             |
+| 4   | B   | Fabric SQL is better answer |
+| 5   | A   |                             |
+| 6   | B   |                             |
+| 7   | B   |                             |
+| 8   | B   |                             |
+| 9   | B   |                             |
+| 10  | C   |                             |
+| 11  |     |                             |
+| 12  |     |                             |
+| 13  |     |                             |
+| 14  |     |                             |
+| 15  |     |                             |
+| 16  |     |                             |
+| 17  |     |                             |
+| 18  |     |                             |
+| 19  |     |                             |
+| 20  |     |                             |
+|     |     |                             |
+|     |     |                             |
+|     |     |                             |</p>
+<hr />
+    <div class="summary-header" style="background: var(--surface-card); border: 1.5px solid var(--border); border-radius: 14px; padding: 1.1rem 1.6rem; margin-bottom: 1.8rem; position: sticky; top: 3.8rem; z-index: 90; backdrop-filter: blur(10px); box-shadow: var(--shadow-sm);">
+        <div id="score-display" style="font-size: 1.05rem; font-weight: 700;">
+            تعداد پاسخ داده شده: <span style="color: var(--accent); font-size: 1.25rem; font-weight: 800;">۰ از ۵۰</span>
+        </div>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <a href="#answer-sheet-section" class="btn-action">📊 جدول پاسخ‌نامه انتهایی</a>
+            <button class="btn-action btn-primary" onclick="checkAnswers()">✓ تصحیح پاسخ‌ها</button>
+            <button class="btn-action" onclick="resetQuiz()">↺ شروع مجدد</button>
+        </div>
+    </div>
+    
+        <div class="mcq-card" id="mcq-1" data-q="1" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q1</span>
+                <div class="mcq-question">Which single logical storage layer is shared by all Fabric workloads?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(1, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Per-workload ADLS accounts</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(1, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>OneLake</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(1, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Synapse dedicated pool</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(1, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Azure SQL</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-1" onclick="toggleDoubt(1)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(1)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(1)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-1" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-2" data-q="2" data-correct="C">
+            <div class="mcq-header">
+                <span class="mcq-number">Q2</span>
+                <div class="mcq-question">What is the default table format for Lakehouse tables in OneLake?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(2, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>CSV</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(2, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>ORC</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(2, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Delta (Parquet + transaction log)</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(2, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Avro</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-2" onclick="toggleDoubt(2)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(2)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(2)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-2" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه C</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-3" data-q="3" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q3</span>
+                <div class="mcq-question">You delete a OneLake/ADLS shortcut object itself in a lakehouse. What happens to the target data?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(3, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Target is deleted</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(3, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Target stays; only the shortcut is removed</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(3, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Target is archived</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(3, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Target is locked</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-3" onclick="toggleDoubt(3)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(3)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(3)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-3" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong><br>💡 <strong>نکته آزمون:</strong> nuance: deleting data *through* a OneLake shortcut path can delete target data; deleting the shortcut object does not.</div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-4" data-q="4" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q4</span>
+                <div class="mcq-question">You need multi-table transactions and full T-SQL INSERT/UPDATE/DELETE on managed data. Best choice?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(4, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Lakehouse SQL analytics endpoint</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(4, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Warehouse</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(4, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Eventhouse</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(4, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Dataflow Gen2</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-4" onclick="toggleDoubt(4)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(4)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(4)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-4" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-5" data-q="5" data-correct="A">
+            <div class="mcq-header">
+                <span class="mcq-number">Q5</span>
+                <div class="mcq-question">The SQL analytics endpoint of a Lakehouse supports:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(5, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Read-only T-SQL over Delta tables</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(5, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Full DML</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(5, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Spark SQL only</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(5, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>KQL only</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-5" onclick="toggleDoubt(5)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(5)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(5)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-5" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه A</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-6" data-q="6" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q6</span>
+                <div class="mcq-question">Low-latency analysis of streaming telemetry using KQL is best done in:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(6, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Warehouse</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(6, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Eventhouse</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(6, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Lakehouse Files</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(6, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Semantic model</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-6" onclick="toggleDoubt(6)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(6)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(6)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-6" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-7" data-q="7" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q7</span>
+                <div class="mcq-question">Which capacity behavior lets short spikes be absorbed by borrowing from future capacity?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(7, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Mirroring</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(7, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Smoothing/bursting</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(7, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Sharding</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(7, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Partitioning</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-7" onclick="toggleDoubt(7)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(7)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(7)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-7" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-8" data-q="8" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q8</span>
+                <div class="mcq-question">Which Delta command compacts many small files?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(8, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>VACUUM</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(8, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>OPTIMIZE</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(8, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>RESTORE</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(8, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>CLONE</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-8" onclick="toggleDoubt(8)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(8)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(8)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-8" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-9" data-q="9" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q9</span>
+                <div class="mcq-question">Default VACUUM retention period for Delta tables is:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(9, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>24 hours</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(9, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>7 days</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(9, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>30 days</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(9, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>90 days</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-9" onclick="toggleDoubt(9)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(9)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(9)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-9" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-10" data-q="10" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q10</span>
+                <div class="mcq-question">V-Order is:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(10, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>A query hint</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(10, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>A write-time Parquet optimization that speeds reads in Fabric engines</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(10, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>An index type</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(10, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>A partition strategy</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-10" onclick="toggleDoubt(10)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(10)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(10)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-10" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-11" data-q="11" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q11</span>
+                <div class="mcq-question">What gives fast Spark session start in Fabric without waiting for node provisioning?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(11, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Custom pool with 100 nodes</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(11, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Starter pool</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(11, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Spark Job Definition</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(11, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Dataflow staging</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-11" onclick="toggleDoubt(11)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(11)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(11)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-11" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-12" data-q="12" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q12</span>
+                <div class="mcq-question">Best way to share libraries and Spark configuration across multiple notebooks?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(12, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Copy cells</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(12, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Environment item</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(12, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Shortcut</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(12, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Variable in pipeline</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-12" onclick="toggleDoubt(12)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(12)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(12)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-12" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-13" data-q="13" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q13</span>
+                <div class="mcq-question">In a medallion architecture, the Silver layer typically contains:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(13, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Raw as-landed data</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(13, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Cleansed, deduplicated, conformed data</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(13, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Aggregated KPIs only</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(13, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Backups</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-13" onclick="toggleDoubt(13)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(13)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(13)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-13" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-14" data-q="14" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q14</span>
+                <div class="mcq-question">Which statement performs an upsert in Delta?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(14, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>INSERT OVERWRITE</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(14, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>MERGE INTO</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(14, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>TRUNCATE</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(14, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>COPY INTO</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-14" onclick="toggleDoubt(14)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(14)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(14)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-14" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-15" data-q="15" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q15</span>
+                <div class="mcq-question">Delta time travel in Spark SQL uses:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(15, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>SELECT ... FOR HISTORY</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(15, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>VERSION AS OF / TIMESTAMP AS OF</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(15, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>UNDO</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(15, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>SNAPSHOT()</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-15" onclick="toggleDoubt(15)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(15)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(15)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-15" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-16" data-q="16" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q16</span>
+                <div class="mcq-question">SCD Type 2 means:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(16, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Overwrite the old value</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(16, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Keep history by adding new rows with validity dates</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(16, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Add a column for previous value only</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(16, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Delete changed rows</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-16" onclick="toggleDoubt(16)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(16)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(16)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-16" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-17" data-q="17" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q17</span>
+                <div class="mcq-question">Which partitioning guidance is correct?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(17, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Partition by high-cardinality columns like customer_id</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(17, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Partition only large tables by low-cardinality columns; avoid creating many small files</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(17, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Always partition by every filter column</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(17, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Never use Z-order with partitioning</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-17" onclick="toggleDoubt(17)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(17)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(17)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-17" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-18" data-q="18" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q18</span>
+                <div class="mcq-question">A small dimension joins a huge fact in Spark and shuffle is slow. First optimization to try?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(18, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Increase partitions to 10,000</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(18, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Broadcast join</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(18, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Cross join</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(18, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Collect to driver</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-18" onclick="toggleDoubt(18)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(18)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(18)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-18" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-19" data-q="19" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q19</span>
+                <div class="mcq-question">Fastest T-SQL bulk ingestion of files from OneLake/ADLS into a Warehouse table:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(19, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Row-by-row INSERT</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(19, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>COPY INTO</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(19, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>BULK cursor</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(19, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>OPENROWSET with loops</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-19" onclick="toggleDoubt(19)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(19)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(19)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-19" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-20" data-q="20" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q20</span>
+                <div class="mcq-question">Which creates a zero-copy clone of a Warehouse table?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(20, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>SELECT INTO</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(20, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>CREATE TABLE ... AS CLONE OF</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(20, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>BACKUP TABLE</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(20, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>COPY TABLE</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-20" onclick="toggleDoubt(20)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(20)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(20)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-20" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-21" data-q="21" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q21</span>
+                <div class="mcq-question">In Fabric Warehouse, row-level security is implemented using:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(21, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Row filters in the portal only</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(21, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>A security policy with an inline table-valued function predicate</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(21, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Workspace Viewer role</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(21, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Sensitivity labels</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-21" onclick="toggleDoubt(21)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(21)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(21)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-21" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-22" data-q="22" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q22</span>
+                <div class="mcq-question">Dynamic Data Masking:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(22, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Encrypts stored data</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(22, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Obfuscates query results for non-privileged users without changing stored data</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(22, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Deletes columns</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(22, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Replaces RLS</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-22" onclick="toggleDoubt(22)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(22)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(22)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-22" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-23" data-q="23" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q23</span>
+                <div class="mcq-question">Which pipeline activity loops over a list of items, e.g. table names?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(23, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Switch</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(23, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>ForEach</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(23, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Wait</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(23, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Set variable</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-23" onclick="toggleDoubt(23)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(23)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(23)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-23" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-24" data-q="24" data-correct="A">
+            <div class="mcq-header">
+                <span class="mcq-number">Q24</span>
+                <div class="mcq-question">Typical pattern to get the list of tables for ForEach from a metadata table:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(24, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Lookup activity</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(24, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Delete activity</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(24, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Script with GOTO</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(24, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Web hook</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-24" onclick="toggleDoubt(24)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(24)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(24)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-24" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه A</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-25" data-q="25" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q25</span>
+                <div class="mcq-question">Low-code Power Query transformations by citizen developers, loaded to a Lakehouse:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(25, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Notebook</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(25, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Dataflow Gen2</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(25, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>KQL queryset</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(25, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Eventstream</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-25" onclick="toggleDoubt(25)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(25)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(25)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-25" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-26" data-q="26" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q26</span>
+                <div class="mcq-question">Incremental extraction from a source table typically uses:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(26, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Full reload daily</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(26, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>A watermark column (e.g. modified_at) stored between runs</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(26, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Random sampling</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(26, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Dropping the table</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-26" onclick="toggleDoubt(26)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(26)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(26)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-26" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-27" data-q="27" data-correct="A">
+            <div class="mcq-header">
+                <span class="mcq-number">Q27</span>
+                <div class="mcq-question">Mirroring in Fabric:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(27, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Replicates a source database continuously into OneLake as Delta without building ETL</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(27, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Creates a backup in Blob</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(27, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Is only for Excel</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(27, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Replaces Git</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-27" onclick="toggleDoubt(27)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(27)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(27)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-27" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه A</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-28" data-q="28" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q28</span>
+                <div class="mcq-question">Recommended model design for analytics semantic models:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(28, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>One wide flat table</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(28, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Star schema</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(28, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Fully normalized 3NF</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(28, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Many-to-many everywhere</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-28" onclick="toggleDoubt(28)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(28)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(28)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-28" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-29" data-q="29" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q29</span>
+                <div class="mcq-question">Direct Lake mode primarily:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(29, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Copies data to Import cache on each query</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(29, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Loads Delta/Parquet column data from OneLake into memory without a refresh-copy step</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(29, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Always runs SQL on the endpoint</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(29, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Requires KQL</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-29" onclick="toggleDoubt(29)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(29)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(29)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-29" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-30" data-q="30" data-correct="D">
+            <div class="mcq-header">
+                <span class="mcq-number">Q30</span>
+                <div class="mcq-question">Direct Lake (on SQL endpoint) may fall back to DirectQuery when:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(30, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Table has fewer than 100 rows</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(30, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>A view is used as source, or guardrails are exceeded, or SQL-endpoint RLS applies</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(30, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Model has measures</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(30, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Report is published</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-30" onclick="toggleDoubt(30)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(30)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(30)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-30" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه D</strong><br>💡 <strong>نکته آزمون:</strong> Direct Lake on OneLake has no DirectQuery fallback; the question refers to on-SQL-endpoint behavior.</div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-31" data-q="31" data-correct="A">
+            <div class="mcq-header">
+                <span class="mcq-number">Q31</span>
+                <div class="mcq-question">DAX time-intelligence functions (e.g. TOTALYTD) require:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(31, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>A properly marked Date table</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(31, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>A calculated column on fact</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(31, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>DirectQuery</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(31, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Row-level security</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-31" onclick="toggleDoubt(31)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(31)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(31)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-31" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه A</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-32" data-q="32" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q32</span>
+                <div class="mcq-question">In DAX, CALCULATE:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(32, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Only sums values</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(32, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Evaluates an expression in a modified filter context</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(32, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Creates relationships</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(32, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Deletes filters permanently</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-32" onclick="toggleDoubt(32)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(32)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(32)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-32" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-33" data-q="33" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q33</span>
+                <div class="mcq-question">Which function iterates row by row over a table?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(33, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>SUM</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(33, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>SUMX</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(33, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>DISTINCT</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(33, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>VALUES</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-33" onclick="toggleDoubt(33)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(33)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(33)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-33" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-34" data-q="34" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q34</span>
+                <div class="mcq-question">Safest way to avoid divide-by-zero errors in a ratio measure:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(34, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>IFERROR everywhere</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(34, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>DIVIDE(numerator, denominator)</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(34, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Add 0.0001</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(34, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Filter blanks in visual</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-34" onclick="toggleDoubt(34)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(34)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(34)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-34" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-35" data-q="35" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q35</span>
+                <div class="mcq-question">Calculation groups are typically authored with:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(35, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Power BI Desktop visual designer only</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(35, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Tabular Editor / model editing tools (XMLA/TMDL)</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(35, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Excel</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(35, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Dataflow Gen2</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-35" onclick="toggleDoubt(35)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(35)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(35)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-35" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-36" data-q="36" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q36</span>
+                <div class="mcq-question">Incremental refresh in Power Query requires parameters named:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(36, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>StartDate and EndDate</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(36, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>RangeStart and RangeEnd (Date/Time)</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(36, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>From and To</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(36, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Min and Max</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-36" onclick="toggleDoubt(36)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(36)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(36)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-36" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-37" data-q="37" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q37</span>
+                <div class="mcq-question">XMLA read/write on a semantic model is needed for:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(37, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Running Copy activity</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(37, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Third-party tools like Tabular Editor to deploy model changes</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(37, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Creating a Lakehouse</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(37, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Monitoring hub</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-37" onclick="toggleDoubt(37)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(37)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(37)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-37" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-38" data-q="38" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q38</span>
+                <div class="mcq-question">Lowest workspace role that can create/edit items but cannot manage workspace membership:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(38, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Viewer</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(38, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Contributor</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(38, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Member</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(38, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Admin</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-38" onclick="toggleDoubt(38)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(38)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(38)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-38" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-39" data-q="39" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q39</span>
+                <div class="mcq-question">Workspace role order from most to least privileged:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(39, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Viewer > Contributor > Member > Admin</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(39, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Admin > Member > Contributor > Viewer</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(39, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Member > Admin > Viewer > Contributor</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(39, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Contributor > Admin > Member > Viewer</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-39" onclick="toggleDoubt(39)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(39)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(39)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-39" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-40" data-q="40" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q40</span>
+                <div class="mcq-question">Sensitivity labels in Fabric come from:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(40, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Azure Monitor</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(40, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Microsoft Purview Information Protection</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(40, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Git</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(40, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Entra ID groups only</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-40" onclick="toggleDoubt(40)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(40)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(40)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-40" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-41" data-q="41" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q41</span>
+                <div class="mcq-question">Deployment pipeline stages are typically:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(41, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Raw → Silver → Gold</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(41, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Development → Test → Production</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(41, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Bronze → Prod</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(41, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Local → Cloud</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-41" onclick="toggleDoubt(41)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(41)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(41)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-41" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-42" data-q="42" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q42</span>
+                <div class="mcq-question">Deployment rules in deployment pipelines are used to:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(42, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Delete items</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(42, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Change data source/parameter values per stage</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(42, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Grant roles</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(42, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Compress data</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-42" onclick="toggleDoubt(42)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(42)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(42)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-42" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-43" data-q="43" data-correct="A">
+            <div class="mcq-header">
+                <span class="mcq-number">Q43</span>
+                <div class="mcq-question">Fabric Git integration supports which providers?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(43, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Azure DevOps and GitHub</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(43, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>SVN only</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(43, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Bitbucket and GitLab only</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(43, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>None</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-43" onclick="toggleDoubt(43)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(43)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(43)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-43" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه A</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-44" data-q="44" data-correct="A">
+            <div class="mcq-header">
+                <span class="mcq-number">Q44</span>
+                <div class="mcq-question">Where do you see a cross-item history of pipeline, notebook and refresh runs?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(44, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Monitoring hub</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(44, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Admin portal audit only</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(44, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>OneLake explorer</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(44, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Tenant settings</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-44" onclick="toggleDoubt(44)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(44)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(44)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-44" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه A</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-45" data-q="45" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q45</span>
+                <div class="mcq-question">The Microsoft Fabric Capacity Metrics app is used to:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(45, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Edit pipelines</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(45, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Analyze CU consumption, throttling and top consumers</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(45, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Deploy models</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(45, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Mask data</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-45" onclick="toggleDoubt(45)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(45)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(45)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-45" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-46" data-q="46" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q46</span>
+                <div class="mcq-question">Eventstream is used to:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(46, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Author DAX</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(46, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Capture, transform and route real-time events without code</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(46, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Create dimensions</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(46, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Schedule semantic model refresh</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-46" onclick="toggleDoubt(46)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(46)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(46)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-46" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-47" data-q="47" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q47</span>
+                <div class="mcq-question">In KQL, which operator filters rows?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(47, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>filter</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(47, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>where</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(47, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>select</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(47, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>having</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-47" onclick="toggleDoubt(47)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(47)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(47)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-47" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-48" data-q="48" data-correct="A">
+            <div class="mcq-header">
+                <span class="mcq-number">Q48</span>
+                <div class="mcq-question">Which KQL fragment counts events in 5-minute buckets?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(48, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>`summarize count() by bin(Timestamp, 5m)`</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(48, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>`group Timestamp 5m`</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(48, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>`count(Timestamp, 5m)`</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(48, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>`bucket 5m`</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-48" onclick="toggleDoubt(48)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(48)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(48)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-48" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه A</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-49" data-q="49" data-correct="A">
+            <div class="mcq-header">
+                <span class="mcq-number">Q49</span>
+                <div class="mcq-question">Fabric Activator (Reflex) is used to:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(49, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Trigger actions/alerts when conditions are detected on data</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(49, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Store Delta tables</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(49, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>Compile Spark</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(49, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Build star schemas</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-49" onclick="toggleDoubt(49)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(49)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(49)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-49" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه A</strong></div>
+            </div>
+        </div>
+        
+
+        <div class="mcq-card" id="mcq-50" data-q="50" data-correct="B">
+            <div class="mcq-header">
+                <span class="mcq-number">Q50</span>
+                <div class="mcq-question">Which statement about the OneLake security / data access model is most accurate?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt" data-opt="A" onclick="selectOption(50, 'A')">
+                    <span class="mcq-opt-letter">A)</span> <span>Item-level workspace roles are the only access control possible</span>
+                </div>
+                <div class="mcq-opt" data-opt="B" onclick="selectOption(50, 'B')">
+                    <span class="mcq-opt-letter">B)</span> <span>Fine-grained access (e.g. folder/table level roles) can be defined for OneLake data in addition to workspace/item permissions</span>
+                </div>
+                <div class="mcq-opt" data-opt="C" onclick="selectOption(50, 'C')">
+                    <span class="mcq-opt-letter">C)</span> <span>OneLake ignores Entra ID</span>
+                </div>
+                <div class="mcq-opt" data-opt="D" onclick="selectOption(50, 'D')">
+                    <span class="mcq-opt-letter">D)</span> <span>Shortcuts bypass all security</span>
+                </div>
+            </div>
+            <div class="mcq-footer">
+                <div class="mcq-toolbar-left">
+                    <button class="btn-tool" id="doubt-btn-50" onclick="toggleDoubt(50)">
+                        ❓ شک دارم
+                    </button>
+                    <button class="btn-tool" onclick="clearQuestion(50)">
+                        ✕ پاک کردن
+                    </button>
+                </div>
+                <button class="mcq-toggle-answer" onclick="toggleExplanation(50)">
+                    🔍 نمایش / پنهان پاسخ و نکته
+                </button>
+                <div class="theory-model-answer" id="exp-50" style="margin-top: 0.8rem;">پاسخ صحیح: <strong>گزینه B</strong><br>💡 <strong>نکته آزمون:</strong> OneLake security (data access roles) feature maturity changes; check current docs if asked.</div>
+            </div>
+        </div>
+        
+    <div class="summary-section" id="answer-sheet-section">
+        <div class="summary-header">
+            <h2>📊 جدول پاسخ‌نامه نهایی (ثبت زنده ۱ تا ۵۰)</h2>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <button class="btn-action btn-primary" onclick="checkAnswers()">✓ تصحیح پاسخ‌ها</button>
+                <a href="#score-display" class="btn-action">↑ بازگشت به بالای آزمون</a>
+            </div>
+        </div>
+        <p dir="auto" style="color: var(--text-secondary); margin-bottom: 1.2rem;">
+            با کلیک روی هر گزینه یا تغییر آن، انتخاب شما بلافاصله و به ترتیب در جدول و ماتریس زیر ثبت می‌شود. با کلیک روی هر خانه می‌توانید مستقیماً به سوال مربوطه بپرید.
+        </p>
+
+        <!-- Matrix Card -->
+        <div class="matrix-card">
+            <div class="matrix-title">
+                <span>⚡ شبکه پاسخ‌نامه سریع (Bubble Grid)</span>
+                <span style="font-size: 0.8rem; font-weight: normal; color: var(--text-muted);">
+                    🟡 زرد = شک دارم | 🔵 آبی = پاسخ داده شده | 🟢 سبز = صحیح | 🔴 قرمز = نادرست
+                </span>
+            </div>
+            <div class="matrix-grid">
+                <a class="matrix-cell" id="m-cell-1" href="#mcq-1"><span class="cell-q">Q1</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-2" href="#mcq-2"><span class="cell-q">Q2</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-3" href="#mcq-3"><span class="cell-q">Q3</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-4" href="#mcq-4"><span class="cell-q">Q4</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-5" href="#mcq-5"><span class="cell-q">Q5</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-6" href="#mcq-6"><span class="cell-q">Q6</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-7" href="#mcq-7"><span class="cell-q">Q7</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-8" href="#mcq-8"><span class="cell-q">Q8</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-9" href="#mcq-9"><span class="cell-q">Q9</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-10" href="#mcq-10"><span class="cell-q">Q10</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-11" href="#mcq-11"><span class="cell-q">Q11</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-12" href="#mcq-12"><span class="cell-q">Q12</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-13" href="#mcq-13"><span class="cell-q">Q13</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-14" href="#mcq-14"><span class="cell-q">Q14</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-15" href="#mcq-15"><span class="cell-q">Q15</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-16" href="#mcq-16"><span class="cell-q">Q16</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-17" href="#mcq-17"><span class="cell-q">Q17</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-18" href="#mcq-18"><span class="cell-q">Q18</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-19" href="#mcq-19"><span class="cell-q">Q19</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-20" href="#mcq-20"><span class="cell-q">Q20</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-21" href="#mcq-21"><span class="cell-q">Q21</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-22" href="#mcq-22"><span class="cell-q">Q22</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-23" href="#mcq-23"><span class="cell-q">Q23</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-24" href="#mcq-24"><span class="cell-q">Q24</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-25" href="#mcq-25"><span class="cell-q">Q25</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-26" href="#mcq-26"><span class="cell-q">Q26</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-27" href="#mcq-27"><span class="cell-q">Q27</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-28" href="#mcq-28"><span class="cell-q">Q28</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-29" href="#mcq-29"><span class="cell-q">Q29</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-30" href="#mcq-30"><span class="cell-q">Q30</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-31" href="#mcq-31"><span class="cell-q">Q31</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-32" href="#mcq-32"><span class="cell-q">Q32</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-33" href="#mcq-33"><span class="cell-q">Q33</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-34" href="#mcq-34"><span class="cell-q">Q34</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-35" href="#mcq-35"><span class="cell-q">Q35</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-36" href="#mcq-36"><span class="cell-q">Q36</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-37" href="#mcq-37"><span class="cell-q">Q37</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-38" href="#mcq-38"><span class="cell-q">Q38</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-39" href="#mcq-39"><span class="cell-q">Q39</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-40" href="#mcq-40"><span class="cell-q">Q40</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-41" href="#mcq-41"><span class="cell-q">Q41</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-42" href="#mcq-42"><span class="cell-q">Q42</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-43" href="#mcq-43"><span class="cell-q">Q43</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-44" href="#mcq-44"><span class="cell-q">Q44</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-45" href="#mcq-45"><span class="cell-q">Q45</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-46" href="#mcq-46"><span class="cell-q">Q46</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-47" href="#mcq-47"><span class="cell-q">Q47</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-48" href="#mcq-48"><span class="cell-q">Q48</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-49" href="#mcq-49"><span class="cell-q">Q49</span><span class="cell-val">-</span></a>
+<a class="matrix-cell" id="m-cell-50" href="#mcq-50"><span class="cell-q">Q50</span><span class="cell-val">-</span></a>
+            </div>
+        </div>
+
+        <!-- Ordered Detailed Grid Table -->
+        <div class="answer-table-grid">
+            <div class="sub-table-card"><div class="sub-table-header">سوالات 1 تا 10</div><table class="sub-table"><thead><tr><th>سوال</th><th>انتخاب شما</th><th>کلید</th><th>لینک</th></tr></thead><tbody><tr><td><strong>Q1</strong></td><td class="cell-choice" id="t-choice-1">-</td><td id="t-correct-1">-</td><td><a class="link-jump" href="#mcq-1">پرش ↗</a></td></tr><tr><td><strong>Q2</strong></td><td class="cell-choice" id="t-choice-2">-</td><td id="t-correct-2">-</td><td><a class="link-jump" href="#mcq-2">پرش ↗</a></td></tr><tr><td><strong>Q3</strong></td><td class="cell-choice" id="t-choice-3">-</td><td id="t-correct-3">-</td><td><a class="link-jump" href="#mcq-3">پرش ↗</a></td></tr><tr><td><strong>Q4</strong></td><td class="cell-choice" id="t-choice-4">-</td><td id="t-correct-4">-</td><td><a class="link-jump" href="#mcq-4">پرش ↗</a></td></tr><tr><td><strong>Q5</strong></td><td class="cell-choice" id="t-choice-5">-</td><td id="t-correct-5">-</td><td><a class="link-jump" href="#mcq-5">پرش ↗</a></td></tr><tr><td><strong>Q6</strong></td><td class="cell-choice" id="t-choice-6">-</td><td id="t-correct-6">-</td><td><a class="link-jump" href="#mcq-6">پرش ↗</a></td></tr><tr><td><strong>Q7</strong></td><td class="cell-choice" id="t-choice-7">-</td><td id="t-correct-7">-</td><td><a class="link-jump" href="#mcq-7">پرش ↗</a></td></tr><tr><td><strong>Q8</strong></td><td class="cell-choice" id="t-choice-8">-</td><td id="t-correct-8">-</td><td><a class="link-jump" href="#mcq-8">پرش ↗</a></td></tr><tr><td><strong>Q9</strong></td><td class="cell-choice" id="t-choice-9">-</td><td id="t-correct-9">-</td><td><a class="link-jump" href="#mcq-9">پرش ↗</a></td></tr><tr><td><strong>Q10</strong></td><td class="cell-choice" id="t-choice-10">-</td><td id="t-correct-10">-</td><td><a class="link-jump" href="#mcq-10">پرش ↗</a></td></tr></tbody></table></div>
+<div class="sub-table-card"><div class="sub-table-header">سوالات 11 تا 20</div><table class="sub-table"><thead><tr><th>سوال</th><th>انتخاب شما</th><th>کلید</th><th>لینک</th></tr></thead><tbody><tr><td><strong>Q11</strong></td><td class="cell-choice" id="t-choice-11">-</td><td id="t-correct-11">-</td><td><a class="link-jump" href="#mcq-11">پرش ↗</a></td></tr><tr><td><strong>Q12</strong></td><td class="cell-choice" id="t-choice-12">-</td><td id="t-correct-12">-</td><td><a class="link-jump" href="#mcq-12">پرش ↗</a></td></tr><tr><td><strong>Q13</strong></td><td class="cell-choice" id="t-choice-13">-</td><td id="t-correct-13">-</td><td><a class="link-jump" href="#mcq-13">پرش ↗</a></td></tr><tr><td><strong>Q14</strong></td><td class="cell-choice" id="t-choice-14">-</td><td id="t-correct-14">-</td><td><a class="link-jump" href="#mcq-14">پرش ↗</a></td></tr><tr><td><strong>Q15</strong></td><td class="cell-choice" id="t-choice-15">-</td><td id="t-correct-15">-</td><td><a class="link-jump" href="#mcq-15">پرش ↗</a></td></tr><tr><td><strong>Q16</strong></td><td class="cell-choice" id="t-choice-16">-</td><td id="t-correct-16">-</td><td><a class="link-jump" href="#mcq-16">پرش ↗</a></td></tr><tr><td><strong>Q17</strong></td><td class="cell-choice" id="t-choice-17">-</td><td id="t-correct-17">-</td><td><a class="link-jump" href="#mcq-17">پرش ↗</a></td></tr><tr><td><strong>Q18</strong></td><td class="cell-choice" id="t-choice-18">-</td><td id="t-correct-18">-</td><td><a class="link-jump" href="#mcq-18">پرش ↗</a></td></tr><tr><td><strong>Q19</strong></td><td class="cell-choice" id="t-choice-19">-</td><td id="t-correct-19">-</td><td><a class="link-jump" href="#mcq-19">پرش ↗</a></td></tr><tr><td><strong>Q20</strong></td><td class="cell-choice" id="t-choice-20">-</td><td id="t-correct-20">-</td><td><a class="link-jump" href="#mcq-20">پرش ↗</a></td></tr></tbody></table></div>
+<div class="sub-table-card"><div class="sub-table-header">سوالات 21 تا 30</div><table class="sub-table"><thead><tr><th>سوال</th><th>انتخاب شما</th><th>کلید</th><th>لینک</th></tr></thead><tbody><tr><td><strong>Q21</strong></td><td class="cell-choice" id="t-choice-21">-</td><td id="t-correct-21">-</td><td><a class="link-jump" href="#mcq-21">پرش ↗</a></td></tr><tr><td><strong>Q22</strong></td><td class="cell-choice" id="t-choice-22">-</td><td id="t-correct-22">-</td><td><a class="link-jump" href="#mcq-22">پرش ↗</a></td></tr><tr><td><strong>Q23</strong></td><td class="cell-choice" id="t-choice-23">-</td><td id="t-correct-23">-</td><td><a class="link-jump" href="#mcq-23">پرش ↗</a></td></tr><tr><td><strong>Q24</strong></td><td class="cell-choice" id="t-choice-24">-</td><td id="t-correct-24">-</td><td><a class="link-jump" href="#mcq-24">پرش ↗</a></td></tr><tr><td><strong>Q25</strong></td><td class="cell-choice" id="t-choice-25">-</td><td id="t-correct-25">-</td><td><a class="link-jump" href="#mcq-25">پرش ↗</a></td></tr><tr><td><strong>Q26</strong></td><td class="cell-choice" id="t-choice-26">-</td><td id="t-correct-26">-</td><td><a class="link-jump" href="#mcq-26">پرش ↗</a></td></tr><tr><td><strong>Q27</strong></td><td class="cell-choice" id="t-choice-27">-</td><td id="t-correct-27">-</td><td><a class="link-jump" href="#mcq-27">پرش ↗</a></td></tr><tr><td><strong>Q28</strong></td><td class="cell-choice" id="t-choice-28">-</td><td id="t-correct-28">-</td><td><a class="link-jump" href="#mcq-28">پرش ↗</a></td></tr><tr><td><strong>Q29</strong></td><td class="cell-choice" id="t-choice-29">-</td><td id="t-correct-29">-</td><td><a class="link-jump" href="#mcq-29">پرش ↗</a></td></tr><tr><td><strong>Q30</strong></td><td class="cell-choice" id="t-choice-30">-</td><td id="t-correct-30">-</td><td><a class="link-jump" href="#mcq-30">پرش ↗</a></td></tr></tbody></table></div>
+<div class="sub-table-card"><div class="sub-table-header">سوالات 31 تا 40</div><table class="sub-table"><thead><tr><th>سوال</th><th>انتخاب شما</th><th>کلید</th><th>لینک</th></tr></thead><tbody><tr><td><strong>Q31</strong></td><td class="cell-choice" id="t-choice-31">-</td><td id="t-correct-31">-</td><td><a class="link-jump" href="#mcq-31">پرش ↗</a></td></tr><tr><td><strong>Q32</strong></td><td class="cell-choice" id="t-choice-32">-</td><td id="t-correct-32">-</td><td><a class="link-jump" href="#mcq-32">پرش ↗</a></td></tr><tr><td><strong>Q33</strong></td><td class="cell-choice" id="t-choice-33">-</td><td id="t-correct-33">-</td><td><a class="link-jump" href="#mcq-33">پرش ↗</a></td></tr><tr><td><strong>Q34</strong></td><td class="cell-choice" id="t-choice-34">-</td><td id="t-correct-34">-</td><td><a class="link-jump" href="#mcq-34">پرش ↗</a></td></tr><tr><td><strong>Q35</strong></td><td class="cell-choice" id="t-choice-35">-</td><td id="t-correct-35">-</td><td><a class="link-jump" href="#mcq-35">پرش ↗</a></td></tr><tr><td><strong>Q36</strong></td><td class="cell-choice" id="t-choice-36">-</td><td id="t-correct-36">-</td><td><a class="link-jump" href="#mcq-36">پرش ↗</a></td></tr><tr><td><strong>Q37</strong></td><td class="cell-choice" id="t-choice-37">-</td><td id="t-correct-37">-</td><td><a class="link-jump" href="#mcq-37">پرش ↗</a></td></tr><tr><td><strong>Q38</strong></td><td class="cell-choice" id="t-choice-38">-</td><td id="t-correct-38">-</td><td><a class="link-jump" href="#mcq-38">پرش ↗</a></td></tr><tr><td><strong>Q39</strong></td><td class="cell-choice" id="t-choice-39">-</td><td id="t-correct-39">-</td><td><a class="link-jump" href="#mcq-39">پرش ↗</a></td></tr><tr><td><strong>Q40</strong></td><td class="cell-choice" id="t-choice-40">-</td><td id="t-correct-40">-</td><td><a class="link-jump" href="#mcq-40">پرش ↗</a></td></tr></tbody></table></div>
+<div class="sub-table-card"><div class="sub-table-header">سوالات 41 تا 50</div><table class="sub-table"><thead><tr><th>سوال</th><th>انتخاب شما</th><th>کلید</th><th>لینک</th></tr></thead><tbody><tr><td><strong>Q41</strong></td><td class="cell-choice" id="t-choice-41">-</td><td id="t-correct-41">-</td><td><a class="link-jump" href="#mcq-41">پرش ↗</a></td></tr><tr><td><strong>Q42</strong></td><td class="cell-choice" id="t-choice-42">-</td><td id="t-correct-42">-</td><td><a class="link-jump" href="#mcq-42">پرش ↗</a></td></tr><tr><td><strong>Q43</strong></td><td class="cell-choice" id="t-choice-43">-</td><td id="t-correct-43">-</td><td><a class="link-jump" href="#mcq-43">پرش ↗</a></td></tr><tr><td><strong>Q44</strong></td><td class="cell-choice" id="t-choice-44">-</td><td id="t-correct-44">-</td><td><a class="link-jump" href="#mcq-44">پرش ↗</a></td></tr><tr><td><strong>Q45</strong></td><td class="cell-choice" id="t-choice-45">-</td><td id="t-correct-45">-</td><td><a class="link-jump" href="#mcq-45">پرش ↗</a></td></tr><tr><td><strong>Q46</strong></td><td class="cell-choice" id="t-choice-46">-</td><td id="t-correct-46">-</td><td><a class="link-jump" href="#mcq-46">پرش ↗</a></td></tr><tr><td><strong>Q47</strong></td><td class="cell-choice" id="t-choice-47">-</td><td id="t-correct-47">-</td><td><a class="link-jump" href="#mcq-47">پرش ↗</a></td></tr><tr><td><strong>Q48</strong></td><td class="cell-choice" id="t-choice-48">-</td><td id="t-correct-48">-</td><td><a class="link-jump" href="#mcq-48">پرش ↗</a></td></tr><tr><td><strong>Q49</strong></td><td class="cell-choice" id="t-choice-49">-</td><td id="t-correct-49">-</td><td><a class="link-jump" href="#mcq-49">پرش ↗</a></td></tr><tr><td><strong>Q50</strong></td><td class="cell-choice" id="t-choice-50">-</td><td id="t-correct-50">-</td><td><a class="link-jump" href="#mcq-50">پرش ↗</a></td></tr></tbody></table></div>
+        </div>
+
+        <!-- Export String Box -->
+        <div class="export-card">
+            <div class="export-header">
+                <span class="export-title">📋 رشته پاسخ‌ها (جهت ارسال بر اساس دستورالعمل 1:A, 2:C, ...):</span>
+                <button class="btn-action" id="copy-export-btn" onclick="copyExportString()">
+                    📋 کپی متن پاسخ‌ها
+                </button>
+            </div>
+            <textarea id="export-text" class="export-textarea" readonly placeholder="به محض انتخاب اولین گزینه، خروجی در اینجا تشکیل می‌شود..."></textarea>
+        </div>
+    </div>
+    
+    </div>
+</div>
+<button id="back-to-top" title="بازگشت به بالا">↑</button>
+
+<script>
+// Theme Toggle
+function toggleTheme() {
+    const html = document.documentElement;
+    const currentTheme = html.getAttribute('data-theme') || 'light';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('fabric-theme', newTheme);
+    updateThemeIcon();
+}
+
+function updateThemeIcon() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const btn = document.getElementById('theme-toggle-btn');
+    if (btn) btn.innerHTML = isDark ? '☀️ تم روشن' : '🌙 تم تاریک';
+}
+
+(function() {
+    const saved = localStorage.getItem('fabric-theme') || 
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', saved);
+    window.addEventListener('DOMContentLoaded', updateThemeIcon);
+})();
+
+// Copy Code Button & Back to Top
+window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('pre').forEach(pre => {
+        const btn = document.createElement('button');
+        btn.className = 'copy-btn';
+        btn.innerText = 'کپی';
+        btn.onclick = () => {
+            const code = pre.querySelector('code')?.innerText || pre.innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                btn.innerText = 'کپی شد! ✓';
+                setTimeout(() => btn.innerText = 'کپی', 2000);
+            });
+        };
+        pre.appendChild(btn);
+    });
+
+    const btt = document.getElementById('back-to-top');
+    if (btt) {
+        window.onscroll = () => {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btt.style.display = 'flex';
+            } else {
+                btt.style.display = 'none';
+            }
+        };
+        btt.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+});
+
+// Search Filter (Cheatsheet & Theory Answers)
+function filterContent(inputId, cardClass) {
+    const query = document.getElementById(inputId).value.toLowerCase().trim();
+    document.querySelectorAll('.' + cardClass).forEach(el => {
+        const text = el.innerText.toLowerCase();
+        el.style.display = (query === '' || text.includes(query)) ? '' : 'none';
+    });
+}
+
+// ─── Theory Questions Q&A Runtime ──────────────────────────────────────────
+
+const TOTAL_THEORY = 31;
+let theoryAnswers = {};
+
+try {
+    const saved = localStorage.getItem('fabric-theory-answers');
+    if (saved) theoryAnswers = JSON.parse(saved);
+} catch(e) {}
+
+function saveTheoryAnswer(qNum) {
+    const txt = document.getElementById('tq-input-' + qNum)?.value || '';
+    if (txt.trim()) {
+        theoryAnswers[qNum] = txt;
+    } else {
+        delete theoryAnswers[qNum];
+    }
+    try {
+        localStorage.setItem('fabric-theory-answers', JSON.stringify(theoryAnswers));
+    } catch(e) {}
+    updateTheoryCard(qNum);
+    updateTheorySummary();
+}
+
+function clearTheoryAnswer(qNum) {
+    const input = document.getElementById('tq-input-' + qNum);
+    if (input) input.value = '';
+    delete theoryAnswers[qNum];
+    try {
+        localStorage.setItem('fabric-theory-answers', JSON.stringify(theoryAnswers));
+    } catch(e) {}
+    updateTheoryCard(qNum);
+    updateTheorySummary();
+}
+
+function updateTheoryCard(qNum) {
+    const card = document.getElementById('theory-q-' + qNum);
+    const statusEl = document.getElementById('tq-status-' + qNum);
+    const val = theoryAnswers[qNum] || '';
+    const words = val.trim() ? val.trim().split(/\s+/).length : 0;
+
+    if (card) {
+        if (words > 0) card.classList.add('is-answered');
+        else card.classList.remove('is-answered');
+    }
+
+    if (statusEl) {
+        if (words > 0) {
+            statusEl.innerHTML = `✓ پاسخ داده شده (${words} کلمه)`;
+            statusEl.style.color = 'var(--success)';
+        } else {
+            statusEl.innerHTML = 'در انتظار نگارش پاسخ...';
+            statusEl.style.color = 'var(--text-muted)';
+        }
+    }
+}
+
+function toggleModelAnswer(qNum) {
+    const el = document.getElementById('model-ans-' + qNum);
+    if (!el) return;
+    el.style.display = el.style.display === 'block' ? 'none' : 'block';
+}
+
+function updateTheorySummary() {
+    let answeredCount = 0;
+    for (let q = 1; q <= TOTAL_THEORY; q++) {
+        const val = theoryAnswers[q] || '';
+        const words = val.trim() ? val.trim().split(/\s+/).length : 0;
+        const cellStatus = document.getElementById('ts-status-' + q);
+        if (cellStatus) {
+            if (words > 0) {
+                cellStatus.innerHTML = `<span style="color: var(--success); font-weight: 700;">✓ ثبت شد (${words} کلمه)</span>`;
+                answeredCount++;
+            } else {
+                cellStatus.innerHTML = `<span style="color: var(--text-muted);">-</span>`;
+            }
+        }
+    }
+
+    const scoreEl = document.getElementById('theory-progress-display');
+    if (scoreEl) {
+        scoreEl.innerHTML = `تعداد پاسخ‌های ثبت‌شده: <span style="color: var(--accent); font-weight: 800;">${answeredCount} از ${TOTAL_THEORY}</span> (${Math.round(answeredCount / TOTAL_THEORY * 100)}%)`;
+    }
+}
+
+function exportTheoryMarkdown() {
+    let md = '# پاسخ‌های من به سوالات نظری Fabric (answers-theory.md)\n\n';
+    let count = 0;
+    for (let q = 1; q <= TOTAL_THEORY; q++) {
+        const ans = theoryAnswers[q];
+        const card = document.getElementById('theory-q-' + q);
+        const qText = card?.querySelector('.theory-question')?.innerText || `Question ${q}`;
+        if (ans && ans.trim()) {
+            count++;
+            md += `## سوال ${q}: ${qText}\n\n${ans.trim()}\n\n---\n\n`;
+        }
+    }
+
+    if (count === 0) {
+        alert('شما هنوز پاسخی برای هیچ‌کدام از سوالات یادداشت نکرده‌اید.');
+        return;
+    }
+
+    navigator.clipboard.writeText(md).then(() => {
+        alert(`متن ${count} پاسخ با فرمت Markdown در کلیپ‌بورد کپی شد.`);
+    });
+}
+
+function downloadTheoryMarkdown() {
+    let md = '# پاسخ‌های من به سوالات نظری Fabric (answers-theory.md)\n\n';
+    let count = 0;
+    for (let q = 1; q <= TOTAL_THEORY; q++) {
+        const ans = theoryAnswers[q];
+        const card = document.getElementById('theory-q-' + q);
+        const qText = card?.querySelector('.theory-question')?.innerText || `Question ${q}`;
+        if (ans && ans.trim()) {
+            count++;
+            md += `## سوال ${q}: ${qText}\n\n${ans.trim()}\n\n---\n\n`;
+        }
+    }
+
+    const blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'answers-theory.md';
+    link.click();
+}
+
+function resetAllTheoryAnswers() {
+    if (!confirm('آیا از پاک کردن تمامی پاسخ‌های تشریحی خود مطمئن هستید؟')) return;
+    theoryAnswers = {};
+    try {
+        localStorage.removeItem('fabric-theory-answers');
+    } catch(e) {}
+    for (let q = 1; q <= TOTAL_THEORY; q++) {
+        const inp = document.getElementById('tq-input-' + q);
+        if (inp) inp.value = '';
+        updateTheoryCard(q);
+    }
+    updateTheorySummary();
+}
+
+// ─── Practical Labs Runtime ────────────────────────────────────────────────
+
+const TOTAL_LABS = 13;
+let labAnswers = {};
+
+try {
+    const saved = localStorage.getItem('fabric-lab-answers');
+    if (saved) labAnswers = JSON.parse(saved);
+} catch(e) {}
+
+function saveLabAnswer(labNum) {
+    const txt = document.getElementById('lab-input-' + labNum)?.value || '';
+    if (txt.trim()) {
+        labAnswers[labNum] = txt;
+    } else {
+        delete labAnswers[labNum];
+    }
+    try {
+        localStorage.setItem('fabric-lab-answers', JSON.stringify(labAnswers));
+    } catch(e) {}
+    updateLabSummary();
+}
+
+function updateLabSummary() {
+    let answered = 0;
+    for (let l = 1; l <= TOTAL_LABS; l++) {
+        const val = labAnswers[l] || '';
+        const cell = document.getElementById('lab-sum-status-' + l);
+        if (cell) {
+            if (val.trim()) {
+                cell.innerHTML = '<span style="color: var(--success); font-weight: 700;">✓ تکمیل شده</span>';
+                answered++;
+            } else {
+                cell.innerHTML = '<span style="color: var(--text-muted);">-</span>';
+            }
+        }
+    }
+    const scoreEl = document.getElementById('lab-progress-display');
+    if (scoreEl) {
+        scoreEl.innerHTML = `تعداد تمرین‌های انجام‌شده: <span style="color: var(--accent); font-weight: 800;">${answered} از ${TOTAL_LABS}</span>`;
+    }
+}
+
+function exportLabMarkdown() {
+    let md = '# گزارش تمرین‌های عملی Fabric Labs (answers-labs.md)\n\n';
+    for (let l = 1; l <= TOTAL_LABS; l++) {
+        const ans = labAnswers[l];
+        if (ans && ans.trim()) {
+            md += `## Lab ${l}\n\n${ans.trim()}\n\n---\n\n`;
+        }
+    }
+    navigator.clipboard.writeText(md).then(() => {
+        alert('گزارش تمام تمرین‌های عملی در کلیپ‌بورد کپی شد.');
+    });
+}
+
+// ─── MCQ Interactive State & Live Answer Sheet Table ───────────────────────
+
+const TOTAL_QUESTIONS = 50;
+let userAnswers = {};
+let userDoubts = {};
+let isSubmitted = false;
+
+// Load saved answers from localStorage
+try {
+    const savedAns = localStorage.getItem('fabric-mcq-answers');
+    if (savedAns) userAnswers = JSON.parse(savedAns);
+    const savedDoubts = localStorage.getItem('fabric-mcq-doubts');
+    if (savedDoubts) userDoubts = JSON.parse(savedDoubts);
+} catch(e) {}
+
+function saveState() {
+    try {
+        localStorage.setItem('fabric-mcq-answers', JSON.stringify(userAnswers));
+        localStorage.setItem('fabric-mcq-doubts', JSON.stringify(userDoubts));
+    } catch(e) {}
+}
+
+function selectOption(qNum, optLetter) {
+    if (userAnswers[qNum] === optLetter) {
+        // Clicking same option deselects it
+        delete userAnswers[qNum];
+    } else {
+        userAnswers[qNum] = optLetter;
+    }
+    saveState();
+    updateQuestionCard(qNum);
+    updateAnswerTable();
+    updateScore();
+}
+
+function toggleDoubt(qNum) {
+    userDoubts[qNum] = !userDoubts[qNum];
+    saveState();
+    updateQuestionCard(qNum);
+    updateAnswerTable();
+}
+
+function clearQuestion(qNum) {
+    delete userAnswers[qNum];
+    delete userDoubts[qNum];
+    saveState();
+    updateQuestionCard(qNum);
+    updateAnswerTable();
+    updateScore();
+}
+
+function updateQuestionCard(qNum) {
+    const card = document.getElementById('mcq-' + qNum);
+    if (!card) return;
+
+    const chosen = userAnswers[qNum];
+    const isDoubt = !!userDoubts[qNum];
+
+    // Options UI
+    card.querySelectorAll('.mcq-opt').forEach(btn => {
+        const optLetter = btn.getAttribute('data-opt');
+        if (optLetter === chosen) {
+            btn.classList.add('selected');
+        } else {
+            btn.classList.remove('selected');
+        }
+    });
+
+    // Doubt button UI
+    const doubtBtn = document.getElementById('doubt-btn-' + qNum);
+    if (doubtBtn) {
+        if (isDoubt) {
+            doubtBtn.classList.add('flagged');
+            doubtBtn.innerHTML = '❓ شک دارم (علامت خورده)';
+        } else {
+            doubtBtn.classList.remove('flagged');
+            doubtBtn.innerHTML = '❓ شک دارم';
+        }
+    }
+
+    // Card border styling
+    if (isDoubt) {
+        card.classList.add('is-flagged');
+    } else {
+        card.classList.remove('is-flagged');
+    }
+
+    if (chosen) {
+        card.classList.add('is-answered');
+    } else {
+        card.classList.remove('is-answered');
+    }
+}
+
+function updateAnswerTable() {
+    let resultItems = [];
+
+    for (let q = 1; q <= TOTAL_QUESTIONS; q++) {
+        const choice = userAnswers[q] || '-';
+        const isDoubt = !!userDoubts[q];
+        const displayVal = choice === '-' ? '-' : (choice + (isDoubt ? '?' : ''));
+
+        // Update Matrix Cell
+        const matrixCell = document.getElementById('m-cell-' + q);
+        if (matrixCell) {
+            const valEl = matrixCell.querySelector('.cell-val');
+            if (valEl) valEl.innerText = displayVal;
+
+            matrixCell.className = 'matrix-cell';
+            if (choice !== '-') matrixCell.classList.add('answered');
+            if (isDoubt) matrixCell.classList.add('flagged');
+
+            if (isSubmitted) {
+                const card = document.getElementById('mcq-' + q);
+                const correct = card?.getAttribute('data-correct');
+                if (choice === correct) matrixCell.classList.add('correct');
+                else if (choice !== '-') matrixCell.classList.add('incorrect');
+            }
+        }
+
+        // Update Table Cell
+        const tableCell = document.getElementById('t-choice-' + q);
+        if (tableCell) {
+            tableCell.innerText = displayVal;
+            tableCell.className = 'cell-choice';
+            if (choice !== '-') tableCell.classList.add('active');
+            if (isDoubt) tableCell.classList.add('flagged');
+
+            if (isSubmitted) {
+                const card = document.getElementById('mcq-' + q);
+                const correct = card?.getAttribute('data-correct');
+                if (choice === correct) tableCell.classList.add('correct');
+                else if (choice !== '-') tableCell.classList.add('incorrect');
+            }
+        }
+
+        if (choice !== '-') {
+            resultItems.push(`${q}:${displayVal}`);
+        }
+    }
+
+    // Update String Export
+    const exportEl = document.getElementById('export-text');
+    if (exportEl) {
+        exportEl.value = resultItems.join(', ');
+    }
+}
+
+function checkAnswers() {
+    isSubmitted = true;
+    let correctCount = 0;
+    const cards = document.querySelectorAll('.mcq-card');
+
+    cards.forEach(card => {
+        const qNum = parseInt(card.getAttribute('data-q'));
+        const correctOpt = card.getAttribute('data-correct');
+        const userChoice = userAnswers[qNum];
+
+        card.querySelectorAll('.mcq-opt').forEach(btn => {
+            const optLetter = btn.getAttribute('data-opt');
+            btn.classList.remove('correct', 'incorrect');
+            if (optLetter === correctOpt) {
+                btn.classList.add('correct');
+            } else if (optLetter === userChoice && userChoice !== correctOpt) {
+                btn.classList.add('incorrect');
+            }
+        });
+
+        if (userChoice === correctOpt) {
+            correctCount++;
+        }
+
+        // Reveal notes
+        const exp = card.querySelector('.mcq-explanation');
+        if (exp) exp.style.display = 'block';
+
+        // Reveal correct column in table
+        const corrCell = document.getElementById('t-correct-' + qNum);
+        if (corrCell) corrCell.innerText = correctOpt;
+    });
+
+    const scoreEl = document.getElementById('score-display');
+    if (scoreEl) {
+        scoreEl.innerHTML = `نمره نهایی: <span class="score-value">${correctCount} از ${TOTAL_QUESTIONS}</span> (${Math.round(correctCount / TOTAL_QUESTIONS * 100)}%)`;
+    }
+
+    updateAnswerTable();
+
+    // Scroll smoothly to answer sheet to review
+    document.getElementById('answer-sheet-section')?.scrollIntoView({ behavior: 'smooth' });
+}
+
+function resetQuiz() {
+    if (!confirm('آیا از پاک کردن تمام انتخاب‌ها و شروع مجدد مطمئن هستید؟')) return;
+    isSubmitted = false;
+    userAnswers = {};
+    userDoubts = {};
+    saveState();
+
+    document.querySelectorAll('.mcq-card').forEach(card => {
+        card.classList.remove('is-answered', 'is-flagged');
+        card.querySelectorAll('.mcq-opt').forEach(btn => {
+            btn.classList.remove('selected', 'correct', 'incorrect');
+        });
+        const exp = card.querySelector('.mcq-explanation');
+        if (exp) exp.style.display = 'none';
+    });
+
+    for (let q = 1; q <= TOTAL_QUESTIONS; q++) {
+        const doubtBtn = document.getElementById('doubt-btn-' + q);
+        if (doubtBtn) {
+            doubtBtn.classList.remove('flagged');
+            doubtBtn.innerHTML = '❓ شک دارم';
+        }
+        const corrCell = document.getElementById('t-correct-' + q);
+        if (corrCell) corrCell.innerText = '-';
+    }
+
+    updateAnswerTable();
+    const scoreEl = document.getElementById('score-display');
+    if (scoreEl) scoreEl.innerHTML = `تعداد پاسخ داده شده: <span class="score-value">۰ از ۵۰</span>`;
+}
+
+function updateScore() {
+    const answered = Object.keys(userAnswers).length;
+    const scoreEl = document.getElementById('score-display');
+    if (scoreEl && !isSubmitted) {
+        scoreEl.innerHTML = `تعداد پاسخ داده شده: <span class="score-value">${answered} از ${TOTAL_QUESTIONS}</span>`;
+    }
+}
+
+function toggleExplanation(qNum) {
+    const exp = document.getElementById('exp-' + qNum);
+    if (!exp) return;
+    exp.style.display = exp.style.display === 'block' ? 'none' : 'block';
+}
+
+function copyExportString() {
+    const txt = document.getElementById('export-text');
+    if (!txt || !txt.value) return;
+    navigator.clipboard.writeText(txt.value).then(() => {
+        const btn = document.getElementById('copy-export-btn');
+        if (btn) {
+            btn.innerText = 'کپی شد! ✓';
+            setTimeout(() => btn.innerText = '📋 کپی متن پاسخ‌ها', 2000);
+        }
+    });
+}
+
+// Restore state on load
+window.addEventListener('DOMContentLoaded', () => {
+    for (let q = 1; q <= TOTAL_QUESTIONS; q++) {
+        updateQuestionCard(q);
+    }
+    updateAnswerTable();
+    updateScore();
+});
+
+// Initialize on Load
+window.addEventListener('DOMContentLoaded', () => {
+    // Theory init
+    for (let q = 1; q <= TOTAL_THEORY; q++) {
+        const inp = document.getElementById('tq-input-' + q);
+        if (inp && theoryAnswers[q]) {
+            inp.value = theoryAnswers[q];
+        }
+        updateTheoryCard(q);
+    }
+    updateTheorySummary();
+
+    // Lab init
+    for (let l = 1; l <= TOTAL_LABS; l++) {
+        const inp = document.getElementById('lab-input-' + l);
+        if (inp && labAnswers[l]) {
+            inp.value = labAnswers[l];
+        }
+    }
+    updateLabSummary();
+});
+</script>
+
+</body>
+</html>
